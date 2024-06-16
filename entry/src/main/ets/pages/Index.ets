@@ -3,11 +3,11 @@ import Btn from '../components/btn'
 @Entry
 @Component
 struct Index {
-  @State message: string = 'Hello World'
+  @State message: string = 'Hello ArkTs'
   @State index: number = 1
 
   build() {
-    Row() {
+    Column() {
       Column() {
         Image($r('app.media.hua'))
           .width('150px')
@@ -24,14 +24,18 @@ struct Index {
           .height(20)
       }
       .alignItems(HorizontalAlign.Start)
-      Column() {
+      .width('100%')
+      .margin({
+        bottom: '30px'
+      })
+      Row() {
         Btn({ message: $message, index: this.index })
       }
+      .width('100%')
     }
-    .alignItems(VerticalAlign.Bottom)
-    .justifyContent(FlexAlign.SpaceBetween)
+    // .alignItems(VerticalAlign.Bottom)
+    // .justifyContent(FlexAlign.SpaceBetween)
     .width('100%')
-    // .height('100%')
     .padding('30px')
   }
 }

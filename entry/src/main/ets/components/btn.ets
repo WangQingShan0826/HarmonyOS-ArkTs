@@ -15,17 +15,31 @@ struct Child {
   @Prop index: number
 
   build() {
-    Button() {
-      Text('Next').fontSize(20).fontWeight(FontWeight.Bold)
+    Row() {
+      Text('水果')
+        .fontSize(16)
+        .fontWeight(400)
+        .decoration({
+          type: TextDecorationType.Underline
+        })
+        .fontColor('#409EFF')
+        .margin({
+          right: '20px'
+        })
+        .onClick(() => {
+          router.pushUrl({ url: 'pages/Fruit' })
+        })
+      Text('待办')
+        .fontSize(16)
+        .fontWeight(400)
+        .decoration({
+          type: TextDecorationType.Underline
+        })
+        .fontColor('#409EFF')
+        .onClick(() => {
+          router.pushUrl({ url: 'pages/Upcoming' })
+        })
     }
-    .type(ButtonType.Capsule)
-    .width(this.btnWidth.width)
-    .height('100px')
-    .onClick(() => {
-      // router.pushUrl({ url: 'pages/Second' })
-      // this.btnWidth = new BtnWidth('40%')
-      this.message = this.message === 'Hello ArkTs' ? 'Hello World' : 'Hello ArkTs'
-    })
   }
 }
 
