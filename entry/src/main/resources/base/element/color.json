@@ -3,6 +3,14 @@
     {
       "name": "start_window_background",
       "value": "#FFFFFF"
+    },
+    {
+      "name": "login_memo_text_color",
+      "value": "#FF8F8F8F"
+    },
+    {
+      "name": "primary_color",
+      "value": "#FFFF0051"
     }
   ]
 }

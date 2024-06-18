@@ -11,6 +11,49 @@
     {
       "name": "EntryAbility_label",
       "value": "花"
+    },
+    {
+      "name": "main_list_news",
+      "value": "推送通知"
+    },
+    {
+      "name": "main_list_data",
+      "value": "数据管理"
+    },
+    {
+      "name": "main_list_toggle",
+      "value": "on"
+    },{
+      "name": "home_grid_love",
+      "value": "我的最爱"
+    },
+    {
+      "name": "home_grid_history",
+      "value": "历史记录"
+    },
+    {
+      "name": "home_grid_messgae",
+      "value": "消息"
+    },
+    {
+      "name": "home_grid_shop",
+      "value": "购物车"
+    },
+    {
+      "name": "home_grid_target",
+      "value": "我的目标"
+    },
+    {
+      "name": "home_grid_group",
+      "value": "圈子"
+    },
+    {
+      "name": "home_grid_collect",
+      "value": "收藏"
+    },
+    {
+      "name": "home_grid_recycleBin",
+      "value": "回收站"
     }
   ]
 }

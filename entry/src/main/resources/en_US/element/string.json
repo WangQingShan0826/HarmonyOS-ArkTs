@@ -11,6 +11,49 @@
     {
       "name": "EntryAbility_label",
       "value": "hua"
+    },
+    {
+      "name": "main_list_news",
+      "value": "News"
+    },
+    {
+      "name": "main_list_data",
+      "value": "Data"
+    },
+    {
+      "name": "main_list_toggle",
+      "value": "on"
+    },{
+      "name": "home_grid_love",
+      "value": "Love"
+    },
+    {
+      "name": "home_grid_history",
+      "value": "History"
+    },
+    {
+      "name": "home_grid_messgae",
+      "value": "Message"
+    },
+    {
+      "name": "home_grid_shop",
+      "value": "Shop"
+    },
+    {
+      "name": "home_grid_target",
+      "value": "Target"
+    },
+    {
+      "name": "home_grid_group",
+      "value": "Group"
+    },
+    {
+      "name": "home_grid_collect",
+      "value": "Collect"
+    },
+    {
+      "name": "home_grid_recycleBin",
+      "value": "RecycleBin"
     }
   ]
 }

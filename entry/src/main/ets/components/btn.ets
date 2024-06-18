@@ -37,7 +37,12 @@ struct Child {
         })
         .fontColor('#409EFF')
         .onClick(() => {
-          router.pushUrl({ url: 'pages/Upcoming' })
+          router.pushUrl({
+            url: 'pages/Upcoming',
+            params: {
+              isComplete: ['学习ArkTs']
+            }
+          })
         })
     }
   }

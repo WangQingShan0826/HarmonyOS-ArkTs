@@ -2,6 +2,9 @@
   "src": [
     "pages/Index",
     "pages/Fruit",
-    "pages/Upcoming"
+    "pages/Upcoming",
+    "pages/Login",
+    "pages/Main",
+    "pages/Home"
   ]
 }

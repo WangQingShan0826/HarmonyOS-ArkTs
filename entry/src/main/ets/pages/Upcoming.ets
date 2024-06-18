@@ -1,3 +1,5 @@
+import router from '@ohos.router'
+
 import UpcomingItem from '../components/UpcomingItem'
 
 @Entry
@@ -5,7 +7,7 @@ import UpcomingItem from '../components/UpcomingItem'
 
 struct Upcoming {
   scroller: Scroller = new Scroller()
-  @State isComplete: string[] = ['学习ArkTs']
+  @State isComplete: string[] = router.getParams()?.['isComplete']
 
   build() {
     Column() {

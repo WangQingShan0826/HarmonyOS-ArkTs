@@ -1,0 +1,20 @@
+{
+  "float": [
+    {
+      "name": "login_logo_size",
+      "value": "78vp"
+    },
+    {
+      "name": "login_title_text_size",
+      "value": "24fp"
+    },
+    {
+      "name": "login_memo_text_size",
+      "value": "14fp"
+    },
+    {
+      "name": "login_input_width",
+      "value": "300"
+    }
+  ]
+}
