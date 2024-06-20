@@ -19,24 +19,26 @@ struct Home {
     new GridItemData($r('app.media.mubiao'), $r('app.string.home_grid_target')),
     new GridItemData($r('app.media.quanzi'), $r('app.string.home_grid_group')),
     new GridItemData($r('app.media.shoucang'), $r('app.string.home_grid_collect')),
-    new GridItemData($r('app.media.huishouzhan'), $r('app.string.home_grid_recycleBin'))
+    new GridItemData($r('app.media.huishouzhan'), $r('app.string.home_grid_recycleBin')),
   ]
 
   @Builder settingCall(item: GridItemData) {
     Column({ space: 8 }) {
       Image(item.img)
-        .width(32)
-        .height(32)
+        .width(26)
+        .height(26)
         .objectFit(ImageFit.Cover)
       Text(item.title)
         .fontSize(12)
     }
   }
 
+  private readonly scroller: Scroller = new Scroller()
+
   build() {
     Row() {
       Column() {
-        Grid() {
+        Grid(this.scroller) {
           ForEach(this.GridData, (item: GridItemData) => {
             GridItem() {
               this.settingCall(item)
@@ -46,17 +48,23 @@ struct Home {
         .rowsTemplate('1fr 1fr')
         .columnsTemplate('1fr 1fr 1fr 1fr')
         .height(144)
-        .width(330)
+        .width('90%')
         .backgroundColor('#FFFFFF')
         .borderRadius(34)
-        .padding(10)
+        .padding({
+          top: 6,
+          bottom: 6
+        })
       }
       .width('100%')
       .height('100%')
       .justifyContent(FlexAlign.Start)
-      .padding(20)
+      .padding({
+        top: 20
+      })
     }
-    .height('100%')
     .backgroundColor('#EFEFEF')
   }
 }
+
+export default Home

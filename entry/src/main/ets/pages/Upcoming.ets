@@ -1,5 +1,3 @@
-import router from '@ohos.router'
-
 import UpcomingItem from '../components/UpcomingItem'
 
 @Entry
@@ -7,7 +5,7 @@ import UpcomingItem from '../components/UpcomingItem'
 
 struct Upcoming {
   scroller: Scroller = new Scroller()
-  @State isComplete: string[] = router.getParams()?.['isComplete']
+  @State completeData: string[] = []
 
   build() {
     Column() {
@@ -17,20 +15,8 @@ struct Upcoming {
         .margin(30)
       Scroll(this.scroller) {
         Column() {
-          UpcomingItem({ title: '学习ArkTs', isComplete: !!this.isComplete.includes('学习ArkTs') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
-          UpcomingItem({ title: '买菜', isComplete: !!this.isComplete.includes('买菜') })
+          UpcomingItem({ title: '学习ArkTs', completeData: $completeData })
+          UpcomingItem({ title: '买菜', completeData: $completeData })
         }
         .padding({
           left: 8,
@@ -59,3 +45,5 @@ struct Upcoming {
     .alignItems(HorizontalAlign.Start)
   }
 }
+
+export default Upcoming

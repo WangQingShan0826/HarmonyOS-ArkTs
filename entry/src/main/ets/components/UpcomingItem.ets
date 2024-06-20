@@ -1,16 +1,22 @@
 @Component
 struct UpcomingItem {
   private title: string
-  @Prop isComplete: boolean
+  @State isComplete: boolean = false
+  @Link @Watch('isCompleteChange') completeData: string[]
+
+  isCompleteChange() {
+    this.isComplete = this.completeData.includes(this.title)
+  }
 
   build() {
     Row() {
       Image(this.isComplete ? $r('app.media.wanchengdise') : $r('app.media.weiwancheng'))
-        .width('60px')
-        .height('60px')
+        // .width(this.isComplete ? 20 : 0)
+        .height(20)
         .margin({
           right: '30px'
         })
+        .transition({ type: TransitionType.All })
       Text(this.title)
         .fontSize(16)
         .fontWeight(500)
@@ -30,8 +36,14 @@ struct UpcomingItem {
       left: 20
     })
     .onClick(() => {
-      this.isComplete = !this.isComplete
-      console.log('isComplete', this.isComplete)
+      animateTo({ duration: 300 }, () => {
+        const index = this.completeData.findIndex(e => e === this.title)
+        if (index > -1) {
+          this.completeData.splice(index, 1)
+        } else {
+          this.completeData.push(this.title)
+        }
+      })
     })
   }
 }

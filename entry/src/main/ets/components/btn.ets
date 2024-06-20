@@ -44,6 +44,18 @@ struct Child {
             }
           })
         })
+      Text('首页')
+        .fontSize(16)
+        .fontWeight(400)
+        .decoration({
+          type: TextDecorationType.Underline
+        })
+        .fontColor('#409EFF')
+        .onClick(() => {
+          router.pushUrl({
+            url: 'pages/Home'
+          })
+        })
     }
   }
 }

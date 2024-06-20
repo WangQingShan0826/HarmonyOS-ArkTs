@@ -1,12 +1,16 @@
+import router from '@ohos.router'
+
 class ItemData {
   title: Resource
   img: Resource
   others?: Resource
+  url: string
 
-  constructor(title: Resource, img: Resource, others: Resource) {
+  constructor(title: Resource, img: Resource, others: Resource, url: string) {
     this.title = title
     this.img = img
     this.others = others
+    this.url = url
   }
 }
 
@@ -16,8 +20,8 @@ class ItemData {
 struct Main {
 
   @State ListData: ItemData[] = [
-    new ItemData($r('app.string.main_list_news'), $r('app.media.hong'), $r('app.string.main_list_toggle')),
-    new ItemData($r('app.string.main_list_data'), $r('app.media.hua'), null)
+    new ItemData($r('app.string.main_list_news'), $r('app.media.hong'), $r('app.string.main_list_toggle'), ''),
+    new ItemData($r('app.string.main_list_data'), $r('app.media.hua'), null, 'pages/Fruit')
   ]
 
   @Builder settingCell(item: ItemData) {
@@ -42,6 +46,11 @@ struct Main {
     }
     .justifyContent(FlexAlign.SpaceBetween)
     .width('100%')
+    .onClick(() => {
+      router.pushUrl({
+        url: item.url
+      })
+    })
   }
 
   build() {
@@ -113,3 +122,5 @@ struct Main {
     .backgroundColor('#EFEFEF')
   }
 }
+
+export default Main
