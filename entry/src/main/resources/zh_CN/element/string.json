@@ -21,6 +21,10 @@
       "value": "数据管理"
     },
     {
+      "name": "main_list_font_size",
+      "value": "字体大小"
+    },
+    {
       "name": "main_list_toggle",
       "value": "on"
     },{

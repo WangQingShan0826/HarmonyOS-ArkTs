@@ -5,7 +5,9 @@ struct UpcomingItem {
   @Link @Watch('isCompleteChange') completeData: string[]
 
   isCompleteChange() {
-    this.isComplete = this.completeData.includes(this.title)
+    animateTo({ duration: 300 }, () => {
+      this.isComplete = this.completeData.includes(this.title)
+    })
   }
 
   build() {
@@ -36,14 +38,12 @@ struct UpcomingItem {
       left: 20
     })
     .onClick(() => {
-      animateTo({ duration: 300 }, () => {
-        const index = this.completeData.findIndex(e => e === this.title)
-        if (index > -1) {
-          this.completeData.splice(index, 1)
-        } else {
-          this.completeData.push(this.title)
-        }
-      })
+      const index = this.completeData.findIndex(e => e === this.title)
+      if (index > -1) {
+        this.completeData.splice(index, 1)
+      } else {
+        this.completeData.push(this.title)
+      }
     })
   }
 }

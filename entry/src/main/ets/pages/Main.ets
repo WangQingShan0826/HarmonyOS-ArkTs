@@ -1,4 +1,5 @@
 import router from '@ohos.router'
+import { fontSizeSetting } from '../store/fontSize'
 
 class ItemData {
   title: Resource
@@ -18,25 +19,34 @@ class ItemData {
 @Component
 
 struct Main {
-
+  @State PrimaryFontSize: number = 18
   @State ListData: ItemData[] = [
-    new ItemData($r('app.string.main_list_news'), $r('app.media.hong'), $r('app.string.main_list_toggle'), ''),
-    new ItemData($r('app.string.main_list_data'), $r('app.media.hua'), null, 'pages/Fruit')
+    new ItemData($r('app.string.main_list_news'), $r('app.media.xiaoxitongzhi'), $r('app.string.main_list_toggle'), ''),
+    new ItemData($r('app.string.main_list_data'), $r('app.media.shuju'), null, 'pages/Fruit'),
+    new ItemData($r('app.string.main_list_font_size'), $r('app.media.zitidaxiao'), null, 'pages/FontSize')
   ]
+
+  onPageShow() {
+    fontSizeSetting.getFontSize('primary_font_size', 0, getContext(this)).then((data: number) => {
+      this.PrimaryFontSize = data
+    })
+  }
 
   @Builder settingCell(item: ItemData) {
     Row() {
       Row({ space: 12 }) {
         Image(item.img)
-          .width(40)
-          .height(40)
+          .width(22)
+          .height(22)
           .objectFit(ImageFit.Cover)
           .borderRadius(50)
         Text(item.title)
+          .fontSize(this.PrimaryFontSize)
       }
 
       if (item.others) {
         Toggle({ type: ToggleType.Switch, isOn: false })
+          .height(22)
       } else {
         Image($r('app.media.you'))
           .width(16)
@@ -46,6 +56,7 @@ struct Main {
     }
     .justifyContent(FlexAlign.SpaceBetween)
     .width('100%')
+    .height(34)
     .onClick(() => {
       router.pushUrl({
         url: item.url

@@ -11,6 +11,7 @@ class GridItemData {
 @Entry
 @Component
 struct Home {
+  // private readonly controller: VideoController = new VideoController()
   @State GridData: GridItemData[] = [
     new GridItemData($r('app.media.like'), $r('app.string.home_grid_love')),
     new GridItemData($r('app.media.lishijilu'), $r('app.string.home_grid_history')),

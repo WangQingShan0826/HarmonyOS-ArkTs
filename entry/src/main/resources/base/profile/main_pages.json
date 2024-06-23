@@ -5,6 +5,7 @@
     "pages/Upcoming",
     "pages/Login",
     "pages/Main",
-    "pages/Home"
+    "pages/Home",
+    "pages/FontSize"
   ]
 }

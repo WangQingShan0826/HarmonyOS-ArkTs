@@ -21,6 +21,10 @@
       "value": "Data"
     },
     {
+      "name": "main_list_font_size",
+      "value": "FontSize"
+    },
+    {
       "name": "main_list_toggle",
       "value": "on"
     },{
